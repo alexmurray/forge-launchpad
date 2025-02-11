@@ -30,9 +30,10 @@
 ;;; Class
 
 (defclass forge-launchpad-repository (forge-noapi-repository)
-  ((commit-url-format :initform "https://%h/%p/commit/?id=%r")
-   (branch-url-format :initform "https://%h/%p/log/?h=%r")
-   (remote-url-format :initform "https://%h/%p/"))
+  ((commit-url-format :initform "https://%h/~%p/commit/?id=%r")
+   (branch-url-format :initform "https://%h/~%p/log/?h=%r")
+   (remote-url-format :initform "https://%h/~%p/")
+   (blob-url-format   :initform "https://%h/~%p/tree/%f?id=%r"))
   "Launchpad from https://help.launchpad.net/Code/Git.")
 
 (add-to-list 'forge-alist '("git.launchpad.net" nil
